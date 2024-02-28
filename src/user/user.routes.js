@@ -28,5 +28,13 @@ router.post(
         validarCampos
     ], userPost);
 
+router.get(
+    '/:id',
+    [
+        check("id", "Is not a ID valid").isMongoId(),
+        check("id").custom(existeUsuarioById),
+        validarCampos
+    ],getUserById);
+
 
 export default router;
