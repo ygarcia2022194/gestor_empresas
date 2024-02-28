@@ -4,7 +4,8 @@ import{
     userPost,
     userPut,
     getUserById,
-    userGet
+    userGet,
+    userDelete
 } from "./user.controller.js";
 
 import {
@@ -44,4 +45,12 @@ router.put(
         validarCampos
     ],userPut)
 
+router.delete(
+    "/:id",
+    [
+        check("id", "Is not a ID valid").isMongoId(),
+        check("id").custom(existeUsuarioById),
+        validarCampos
+    ],userDelete)
+    
 export default router;
