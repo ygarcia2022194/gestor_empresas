@@ -1,4 +1,4 @@
-import User from "../user/user";
+import User from "../user/user.js";
 
 export const existeEmail = async (correo='')=>{
     const existeEmail = await User.findOne({correo});
