@@ -22,14 +22,14 @@ export const existeEmailC = async (correo= '')=>{
     }
 }
 
-export const existeEmpresaById = async (id = ''){
+export const existeEmpresaById = async (id = '')=>{
     const existeEmpresa = await Company.finById(id);
     if(!existeEmpresa){
         throw new Error(`El ID: ${id} no existe`);
     }
 }
 
-export const validarAñosTrayectoria = async (años = ""){
+export const validarAñosTrayectoria = async (años = "")=>{
     if(años == null || isNaN(años) || años<0){
         throw new Error('The years of experience must be a valid number greater than 0');
     }

@@ -7,13 +7,14 @@ import morgan from 'morgan'
 import { dbConnection } from './mongo.js';
 import dotenv from 'dotenv';
 import userRoutes from '../src/user/user.routes.js';
+import companyRoutes from '../src/companies/company.routes.js';
 
 class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
         this.userPath = '/companyControl/v1/users'
-
+        this.companyPath = '/companyControl/v1/company'
 
         this.middlewares();
         this.conectarDB();
@@ -34,6 +35,7 @@ class Server{
 
     routes(){
        this.app.use(this.userPath, userRoutes);
+       this.app.use(this.companyPath, companyRoutes);
     }
 
     listen(){
