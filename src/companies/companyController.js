@@ -111,3 +111,34 @@ export const companiesPut = async (req, res = response)=>{
         companies
     });
 }
+
+export const generateExcelReport = async (req, res) =>{
+    try {
+        const companies = await Company.find({}).exec();
+        const workbook = new ExcelJS.Workbook();
+
+        const worksheet = workbook.addWorksheet('companies');
+        worksheet.addRow(['Company Name', 'Company Email', 'Company Phone', 'Nationality', 'Level Of Impact', 'Years Of Trayectory', 'Category']);
+        companies.forEach(companies =>{
+            worksheet.addRow([
+                companies.nombre,
+                companies.correo,
+                companies.telefono,
+                companies.nacionalidad,
+                companies.nivelImpacto,
+                companies.añosTrayectoria,
+                companies.categoria
+            ]);
+        });
+        const buffer = await workbook.xlsx.writeBuffer();
+
+        res.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        res.set('Content-Disposition', 'attachment; filename="report_companies.xlsx"');
+        res.send(buffer);
+    } catch (error) {
+        console.log(e);
+        res.status(500).json({
+            msg: "Report no generated"
+        })
+    }
+};
