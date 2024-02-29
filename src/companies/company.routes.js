@@ -36,4 +36,18 @@ router.post(
         validarCampos
     ],companyPost);
 
+router.get("/companies", companiesGetAZ);
+router.get("/companiess", companiesGetZA);
+router.get("/companiesYT", companyYearsTrayectory);
+
+router.get('/reporte-empresas', generateExcelReport);
+router.put(
+    "/:id",
+    [
+        check("id", "Isn't a valid id").isMongoId(),
+        check("id").custom(existeEmpresaById),
+        validarCampos
+    ],companiesPut);
+
+
 export default router;

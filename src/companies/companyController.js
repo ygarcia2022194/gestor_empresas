@@ -1,6 +1,6 @@
 import {response, request} from "express";
 import Company from './company.js';
-
+import ExcelJS from 'exceljs';
 export const companyPost = async (req, res)=>{
     const {nombre, correo, telefono, nacionalidad, nivelImpacto, añosTrayectoria, categoria} = req.body;
     const company = new Company( {nombre, correo, telefono, nacionalidad, nivelImpacto, añosTrayectoria, categoria});

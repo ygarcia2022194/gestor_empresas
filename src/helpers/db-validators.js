@@ -23,7 +23,7 @@ export const existeEmailC = async (correo= '')=>{
 }
 
 export const existeEmpresaById = async (id = '')=>{
-    const existeEmpresa = await Company.finById(id);
+    const existeEmpresa = await Company.findById(id);
     if(!existeEmpresa){
         throw new Error(`El ID: ${id} no existe`);
     }
