@@ -136,7 +136,7 @@ export const generateExcelReport = async (req, res) =>{
         res.set('Content-Disposition', 'attachment; filename="report_companies.xlsx"');
         res.send(buffer);
     } catch (error) {
-        console.log(e);
+        console.log(error);
         res.status(500).json({
             msg: "Report no generated"
         })
