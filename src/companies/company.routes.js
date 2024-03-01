@@ -17,13 +17,14 @@ import { existeEmailC,
 } from "../helpers/db-validators.js";
 
 import {validarCampos} from "../middlewares/validar-campos.js";
-
+import { validarJWT } from "../middlewares/validar-jwt.js";
 const router = Router();
 
 router.get("/", companyGet);
 
 router.post(
     "/",[
+        validarJWT,
         check("nombre", "The name is obligatory").not().isEmpty(),
         check("correo", "This isn't a email valid").isEmail(),
         check("correo").custom(existeEmailC),
@@ -44,6 +45,7 @@ router.get('/reporte-empresas', generateExcelReport);
 router.put(
     "/:id",
     [
+        validarJWT,
         check("id", "Isn't a valid id").isMongoId(),
         check("id").custom(existeEmpresaById),
         validarCampos
