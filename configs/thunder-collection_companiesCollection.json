@@ -1,0 +1,134 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "companiesCollection",
+    "dateExported": "2024-03-03T21:58:50.070Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "82184291-149b-4209-aa00-3626dd305eb1",
+            "colId": "ffaed45a-43f2-4ed3-a3fa-515c5d41826e",
+            "containerId": "",
+            "name": "companyPost",
+            "url": "http://localhost:8080/companyControl/v1/company",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-29T03:44:46.401Z",
+            "modified": "2024-02-29T03:44:46.401Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Alorica\",\n  \"correo\":\"`Alorica@gmail.com\",\n  \"telefono\":\"78451252\",\n  \"nacionalidad\":\"EEUU\",\n  \"nivelImpacto\":\"Alto\",\n  \"añosTrayectoria\": 20,\n  \"categoria\": \"Call Center\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "392820ca-0b06-42cc-b5dd-ac93353cbf02",
+            "colId": "ffaed45a-43f2-4ed3-a3fa-515c5d41826e",
+            "containerId": "",
+            "name": "getCompanies",
+            "url": "http://localhost:8080/companyControl/v1/company",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-29T03:44:46.402Z",
+            "modified": "2024-02-29T03:44:46.402Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d5d288d3-b204-47ad-8f3b-0d28ed7baf67",
+            "colId": "ffaed45a-43f2-4ed3-a3fa-515c5d41826e",
+            "containerId": "",
+            "name": "getCompaniesAZ",
+            "url": "http://localhost:8080/companyControl/v1/company/companies?filtro=A-Z",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-29T03:44:46.403Z",
+            "modified": "2024-02-29T03:44:46.403Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "filtro",
+                    "value": "A-Z",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "e2fcb495-47db-4859-855f-07faa9c49a3c",
+            "colId": "ffaed45a-43f2-4ed3-a3fa-515c5d41826e",
+            "containerId": "",
+            "name": "getCompaniesZA",
+            "url": "http://localhost:8080/companyControl/v1/company/companiess?filtro=Z-A",
+            "method": "GET",
+            "sortNum": 35000,
+            "created": "2024-02-29T03:44:46.406Z",
+            "modified": "2024-02-29T03:44:46.406Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "filtro",
+                    "value": "Z-A",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "afbec35f-3598-49f2-a699-321cb65a61de",
+            "colId": "ffaed45a-43f2-4ed3-a3fa-515c5d41826e",
+            "containerId": "",
+            "name": "getCompaniesYT",
+            "url": "http://localhost:8080/companyControl/v1/company/companiesYt",
+            "method": "GET",
+            "sortNum": 37500,
+            "created": "2024-02-29T03:44:46.407Z",
+            "modified": "2024-02-29T03:44:46.407Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ebf3fbe5-f219-47f5-8233-fa358ab48c85",
+            "colId": "ffaed45a-43f2-4ed3-a3fa-515c5d41826e",
+            "containerId": "",
+            "name": "companiesPut",
+            "url": "http://localhost:8080/companyControl/v1/company/65da42e59649c7205e01635e",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-29T03:44:46.404Z",
+            "modified": "2024-02-29T03:44:46.404Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRhMWE5NTk0MDdhMzBlNDA5NTE3ZGQiLCJpYXQiOjE3MDg4MDk0MjAsImV4cCI6MTcwODgxMzAyMH0.bb3uqLSDDlhCJhBtsKHGqBOkIRNms-Th6GfwfyEiAac"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"ARROW\",\n  \"correo\":\"ARROW@gmail.com\",\n  \"telefono\":\"78451252\",\n  \"nacionalidad\":\"US\",\n  \"nivelImpacto\":\"medio\",\n  \"añosTrayectoria\": 15,\n  \"categoria\": \"corbatas\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9ca6ea77-015e-4ebd-bab5-36268c08df2e",
+            "colId": "ffaed45a-43f2-4ed3-a3fa-515c5d41826e",
+            "containerId": "",
+            "name": "generarReporte",
+            "url": "http://localhost:8080/companyControl/v1/company/reporte-empresas",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-02-29T03:44:46.405Z",
+            "modified": "2024-02-29T03:44:46.405Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
